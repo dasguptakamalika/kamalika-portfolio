@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Posts</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<h1>My Posts</h1>
+
+<div th:each="post : ${posts}">
+    <h2 th:text="${post.title}"></h2>
+    <p><small th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}"></small></p>
+
+    <!-- If it's a blog -->
+    <div th:if="${post.type == 'blog'}">
+        <p th:text="${post.content}"></p>
+    </div>
+
+    <!-- If it's a photo -->
+    <div th:if="${post.type == 'photo'}">
+        <img th:src="${post.imageUrl}" alt="Photo" style="max-width:500px;">
+        <p th:text="${post.content}"></p>
+    </div>
+
+    <hr/>
+</div>
+
+<p><a th:href="@{/}">⬅ Back to Home</a></p>
+</body>
+</html>
