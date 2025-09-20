@@ -3,15 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f9f9f9;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 12px 0;
+            font-size: 18px;
+        }
+        a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            max-width: 250px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .dog-note {
+            font-style: italic;
+            font-size: 16px;
+            color: #444;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-<h1>Welcome to My Portfolio</h1>
+<h1>🐾 Welcome to My Portfolio 🐾</h1>
 <p>This is the frontend connected to Spring Boot + PostgreSQL.</p>
 
 <ul>
-    <li><a href="/users-page">View Users</a></li>
-    <li><a href="/add-user">Add New User</a></li>
+    <!-- Users section -->
+    <li><a href="/users-page">👥 View Users</a></li>
+    <li><a href="/add-user">➕ Add New User</a></li>
+
+    <!-- Blog + Photography -->
+    <li><a href="/posts?type=blog">✍️ Blogs</a></li>
+    <li><a href="/posts?type=photo">📸 Photography</a></li>
+
+    <!-- Resume -->
+    <li><a href="/resume.pdf" target="_blank">📄 My Resume</a></li>
+
+    <!-- GitHub -->
+    <li><a href="https://github.com/dasguptakamalika" target="_blank">💻 My GitHub</a></li>
+
+    <!--LinkedIn-->
+    <li><a href="www.linkedin.com/in/kamalika-dasgupta-5364b7252" target="_blank">Linkedin</a></li>
 </ul>
+
+<!-- Dog photo + funny caption -->
+<div>
+    <img src="/dog1.jpg" alt="My Dog">
+
+    <p class="dog-note">"Hire my hooman so she can buy me more treatos 🦴"</p>
+</div>
 </body>
 </html>
-
