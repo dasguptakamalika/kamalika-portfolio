@@ -9,3 +9,4 @@ PS D:\portfolio> mvn spring-boot:run (when maven is there globally)
 http://localhost:8080/api/users
 
 http://localhost:8080
+Use of freeforms recommended.
