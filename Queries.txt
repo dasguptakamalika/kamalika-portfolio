@@ -1,14 +1,59 @@
-CREATE TABLE users (
+CREATE TABLE users
+(
     id SERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     role VARCHAR(20) DEFAULT 'ADMIN'
 );
 
-CREATE TABLE posts (
+CREATE TABLE posts 
+(
     id SERIAL PRIMARY KEY,
     title VARCHAR(200) NOT NULL,
     content TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT NOW(),
     published BOOLEAN DEFAULT FALSE
 );
+
+ALTER TABLE posts ADD COLUMN type VARCHAR(50);
+ALTER TABLE posts ADD COLUMN image_url VARCHAR(500);
+
+-- Insert initial data
+INSERT INTO posts (title, content, type, published) 
+VALUES (
+    'My First Blog Post',
+    'This is my first blog post written with Spring Boot + PostgreSQL!',
+    'blog',
+    TRUE
+);
+
+INSERT INTO posts (title, content, type, image_url, published) 
+VALUES (
+    'Sunset at the Beach',
+    'Captured this beautiful sunset during my evening walk.',
+    'photo',
+    'https://picsum.photos/600/400',
+    TRUE
+);
+
+INSERT INTO posts (title, content, type, published)
+VALUES (
+  'Java 25 vs Java 17 🤯',
+  'I just did Java 17 certification, and suddenly Java 25 is here! Don’t panic – Java now releases every 6 months. Java 17 is still LTS, stable and widely used, while Java 25 has newer features but is not LTS. Stick to LTS for real-world jobs!',
+  'blog',
+  TRUE
+);
+
+INSERT INTO posts (title, content, type, image_url, published)
+VALUES (
+  'Whiskey at the Park 🐶',
+  'My English Lab, Whiskey, enjoying a sunny day at the park!',
+  'photo',
+  '/Dog2.jpg',
+  TRUE
+);
+
+-- Targeted updates
+UPDATE posts SET image_url = '/beach2.png' WHERE title = 'Sunset at the Beach';
+
+SELECT id, title, image_url FROM posts WHERE title = 'Sunset at the Beach';
