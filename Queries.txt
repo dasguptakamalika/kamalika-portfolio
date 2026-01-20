@@ -12,7 +12,7 @@ CREATE TABLE posts
     title VARCHAR(200) NOT NULL,
     content TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT NOW(),
-    published BOOLEAN DEFAULT FALSE
+    published BOOLEAN DEFAULT FALSE 
 );
 
 ALTER TABLE posts ADD COLUMN type VARCHAR(50);
@@ -57,3 +57,4 @@ VALUES (
 UPDATE posts SET image_url = '/beach2.png' WHERE title = 'Sunset at the Beach';
 
 SELECT id, title, image_url FROM posts WHERE title = 'Sunset at the Beach';
+
