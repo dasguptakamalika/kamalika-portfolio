@@ -9,7 +9,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/posts")
 public class PostController {
-
+ 
     private final PostRepository postRepository;
 
     public PostController(PostRepository postRepository) {
@@ -58,3 +58,4 @@ public class PostController {
         return "redirect:/posts?type=" + post.getType();
     }
 }
+
